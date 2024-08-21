@@ -52,15 +52,15 @@ const events = {
         {time: "17:00", description: "Закрытие", place: "Главный зал"}
     ],
     kz: [
-        {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
-        {time: "09:00-09:45", description: "Мастер Класс", place: "Главный зал"},
-        {time: "10:00-12:30", description: "Заседание", place: "Секция 1"},
-        {time: "12:30-14:00", description: "Перерыв", place: ""},
-        {time: "14:00", description: "Знакомство", place: "21"},
-        {time: "14:30-14:50", description: "Мурат учитель года", place: "Главный зал"},
-        {time: "15:00-16:00", description: "Первая сессия", place: "Главный зал"},
-        {time: "16:00-17:00", description: "Вторая сессия", place: "Главный зал"},
-        {time: "17:00", description: "Закрытие", place: "Главный зал"}
+        {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},
+        {time: "09:00-09:45", description: "Шеберлік сыныбы", place: "Басты зал"},
+        {time: "10:00-12:30", description: "Жиын", place: "1-секция"},
+        {time: "12:30-14:00", description: "Үзіліс", place: ""},
+        {time: "14:00", description: "Танысу", place: "21"},
+        {time: "14:30-14:50", description: "Жыл мұғалімі Мұрат", place: "Басты зал"},
+        {time: "15:00-16:00", description: "Бірінші сессия", place: "Басты зал"},
+        {time: "16:00-17:00", description: "Екінші сессия", place: "Басты зал"},
+        {time: "17:00", description: "Жабылу", place: "Басты зал"}        
     ]
 };
 
