@@ -1,31 +1,27 @@
+/* Сброс общего стиля */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f7f8fa;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
 }
 
+/* Основной контейнер */
 .container {
     background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    text-align: center;
+    text-align: left; /* Изменено на выравнивание слева */
     margin: 20px 0;
-    transition: box-shadow 0.3s ease;
 }
 
-.container:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
+/* Переключатель языков */
 .language-switcher {
     display: flex;
     justify-content: flex-end;
@@ -33,8 +29,8 @@ body {
 }
 
 .language-switcher button {
-    margin-left: 8px;
-    padding: 8px 16px;
+    margin-left: 10px;
+    padding: 5px 10px;
     background-color: #007BFF;
     border: none;
     border-radius: 5px;
@@ -47,32 +43,33 @@ body {
     background-color: #0056b3;
 }
 
-h1 {
+/* Заголовки и текст */
+h1, h2 {
     color: #333;
     margin-bottom: 20px;
-    font-size: 1.8em;
-    letter-spacing: 1px;
+    text-align: left; /* Заголовки выравниваем слева */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* Выровнено по левому краю */
 }
 
 label {
     margin-bottom: 10px;
-    font-weight: 600;
+    font-weight: bold;
     color: #555;
+    text-align: left; /* Лейблы выравниваем слева */
 }
 
 input[type="number"] {
-    padding: 12px;
+    padding: 10px;
     width: 100%;
-    max-width: 320px;
+    max-width: 300px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 5px;
     box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
@@ -83,92 +80,60 @@ input[type="number"]:focus {
 }
 
 button {
-    padding: 12px 24px;
+    padding: 10px 20px;
     background-color: #007BFF;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: #0056b3;
-    transform: scale(1.05);
 }
 
+/* Секция результатов */
 #section, #place {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
+    text-align: left; /* Выровнено по левому краю */
 }
 
-.events-section, .pdf-section {
+/* Секция событий */
+.events-section {
     background-color: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
-    text-align: center;
-    margin: 20px 0;
-    transition: box-shadow 0.3s ease;
-}
-
-.events-section:hover, .pdf-section:hover {
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-.events-section h2, .pdf-section h2 {
-    color: #333;
+    text-align: left; /* События выравниваем слева */
     margin-bottom: 20px;
-    font-size: 1.6em;
-    letter-spacing: 1px;
 }
 
+/* Таблица событий */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    text-align: left; /* Таблицу выравниваем слева */
 }
 
 table th, table td {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ccc;
-    text-align: left;
 }
 
 table th {
     background-color: #007BFF;
     color: #fff;
+    text-align: left; /* Заголовки таблицы выравниваем слева */
 }
 
-.pdf-viewer {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#success-icon {
-    text-align: center;
-    margin-top: 20px;
-}
-
-#success-icon img {
-    max-width: 100%;
-    height: auto;
-    width: 60px;
-    transition: transform 0.3s ease-in-out;
-}
-
-#success-icon img:hover {
-    transform: rotate(360deg);
-}
-
+/* Адаптивность для мобильных устройств */
 @media (max-width: 600px) {
-    .container, .events-section, .pdf-section {
+    .container, .events-section {
         padding: 20px;
         width: 90%;
     }

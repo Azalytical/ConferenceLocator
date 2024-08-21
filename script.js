@@ -25,14 +25,14 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
                 document.getElementById('place').innerText = `${item.Place}`;
                 document.getElementById('success-icon').style.display = 'block';
             } else {
-                document.getElementById('name').innerText = 'ID not found';
+                document.getElementById('name').innerText = 'Не найдено';
                 document.getElementById('section').innerText = '';
                 document.getElementById('place').innerText = '';
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            document.getElementById('name').innerText = 'Error loading data';
+            document.getElementById('name').innerText = 'Не найдено';
             document.getElementById('section').innerText = '';
             document.getElementById('place').innerText = '';
         });
