@@ -129,6 +129,8 @@ function switchLanguage(lang) {
     });
 }
 
+
+
 // Начальная установка языка
 switchLanguage(currentLang);
 displayEvents();
