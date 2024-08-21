@@ -42,25 +42,25 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
 const events = {
     ru: [
         {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
-        {time: "09:00-09:45", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "10:00-12:30", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "12:30-14:00", description: "ТЕСТ", place: ""},
-        {time: "14:00", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "14:30-14:50", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "15:00-16:00", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "16:00-17:00", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "17:00", description: "ТЕСТ", place: "ТЕСТ"}
+        {time: "09:00-09:45", description: "Мастер Класс", place: "Главный зал"},
+        {time: "10:00-12:30", description: "Заседание", place: "Секция 1"},
+        {time: "12:30-14:00", description: "Перерыв", place: ""},
+        {time: "14:00", description: "Знакомство", place: "21"},
+        {time: "14:30-14:50", description: "Мурат учитель года", place: "Главный зал"},
+        {time: "15:00-16:00", description: "Первая сессия", place: "Главный зал"},
+        {time: "16:00-17:00", description: "Вторая сессия", place: "Главный зал"},
+        {time: "17:00", description: "Закрытие", place: "Главный зал"}
     ],
     kz: [
         {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
-        {time: "09:00-09:45", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "10:00-12:30", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "12:30-14:00", description: "ТЕСТ", place: ""},
-        {time: "14:00", description: "ТЕСТ", place: "ТЕСТ 2"},
-        {time: "14:30-14:50", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "15:00-16:00", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "16:00-17:00", description: "ТЕСТ", place: "ТЕСТ"},
-        {time: "17:00", description: "ТЕСТ", place: "ТЕСТ"}
+        {time: "09:00-09:45", description: "Мастер Класс", place: "Главный зал"},
+        {time: "10:00-12:30", description: "Заседание", place: "Секция 1"},
+        {time: "12:30-14:00", description: "Перерыв", place: ""},
+        {time: "14:00", description: "Знакомство", place: "21"},
+        {time: "14:30-14:50", description: "Мурат учитель года", place: "Главный зал"},
+        {time: "15:00-16:00", description: "Первая сессия", place: "Главный зал"},
+        {time: "16:00-17:00", description: "Вторая сессия", place: "Главный зал"},
+        {time: "17:00", description: "Закрытие", place: "Главный зал"}
     ]
 };
 
@@ -94,12 +94,12 @@ function toggleLanguage() {
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: 'СКИБИДИ САММИТ',
+            heading: 'ТАРАЗ САММИТ МУРАТ АБДУЛАИВИЧ',
             label: 'ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
             place: 'Орны:',
-            eventsHeading: 'СКИБИДИ бағдарламасы',
+            eventsHeading: 'Бағдарламасы',
             eventsTime: 'Уақыты',
             eventsDescription: 'Іс-шара',
             eventsPlace: 'Аудитория',
@@ -107,12 +107,12 @@ function switchLanguage(lang) {
             resultName: 'Аты-жөні:'
         },
         ru: {
-            heading: 'СКИБИДИ САММИТ',
+            heading: 'ТАРАЗ САММИТ МУРАТ АБДУЛАИВИЧ',
             label: 'Введите ИИН:',
             button: 'Поиск',
             section: 'Секция:',
             place: 'Аудитория:',
-            eventsHeading: 'Программа СКИБИДИ',
+            eventsHeading: 'Программа',
             eventsTime: 'Время',
             eventsDescription: 'Описание',
             eventsPlace: 'Аудитория',
