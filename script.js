@@ -1,8 +1,11 @@
 document.getElementById('lookup-form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    const id = parseInt(document.getElementById('id').value.trim(), 10);
+    event.preventDefault();  // предотвращаем отправку формы
 
+    const iin = document.getElementById('iin').value.trim();  // получаем введенный ИИН
 
+    console.log(iin);
+    
+    // Загружаем файл data.csv и ищем человека по ИИН
     fetch('assets/data.csv')
         .then(response => response.text())
         .then(text => {
@@ -18,26 +21,26 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
                 return item;
             });
 
-            const item = data.find(entry => parseInt(entry.ID, 10) === id);
+            // Ищем человека по ИИН
+            const item = data.find(entry => entry.IIN === iin);  // изменено на поиск по IIN
             if (item) {
                 document.getElementById('name').innerText = `${item.Name}`;
                 document.getElementById('section').innerText = `${item.Section}`;
                 document.getElementById('place').innerText = `${item.Place}`;
                 document.getElementById('success-icon').style.display = 'block';
             } else {
-                document.getElementById('name').innerText = 'ID not found';
+                document.getElementById('name').innerText = 'ИИН не найден';
                 document.getElementById('section').innerText = '';
                 document.getElementById('place').innerText = '';
             }
         })
         .catch(error => {
-            console.error('Error:', error);
-            document.getElementById('name').innerText = 'Error loading data';
+            console.error('Ошибка:', error);
+            document.getElementById('name').innerText = 'Ошибка загрузки данных';
             document.getElementById('section').innerText = '';
             document.getElementById('place').innerText = '';
         });
 });
-
 
 const events = [
     {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},
@@ -66,18 +69,18 @@ function toggleLanguage() {
     if (currentLang === 'ru') {
         switchLanguage('kz');
         currentLang = 'kz';
-        document.getElementById('switch-lang').innerText = 'Switch to Russian';
+        document.getElementById('switch-lang').innerText = 'Русский';
     } else {
         switchLanguage('ru');
         currentLang = 'ru';
-        document.getElementById('switch-lang').innerText = 'Switch to Kazakh';
+        document.getElementById('switch-lang').innerText = 'Казахский';
     }
 }
 
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: '«DIGITAL KAZAKHSTAN: ЗАМАНАУИ БІЛІМ БЕРУ» педагогтердің республикалық тамыз саммиті',
+            heading: 'Скибиди дәретханасының өзі бойынша Конференция',
             label: 'Тіркелу үшін ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
@@ -90,7 +93,7 @@ function switchLanguage(lang) {
             resultName: 'Аты-жөні:'
         },
         ru: {
-            heading: '«DIGITAL KAZAKHSTAN: СОВРЕМЕННОЕ ОБРАЗОВАНИЕ» Республиканский саммит педагогов',
+            heading: '«Конференция по самому скибиди туалету',
             label: 'Введите ИИН для регистрации:',
             button: 'Поиск',
             section: 'Секция:',
