@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ID Lookup</title>
+    <link rel="stylesheet" href="styles.css">
+    <script data-cfasync="false" type="text/javascript" src="form-submission-handler.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="language-switcher">
+    </div>
+    <h1 data-lang="heading">ID Lookup</h1>
+    <form id="lookup-form" class="gform"  method="GET" action="https://script.google.com/macros/s/AKfycbxcMH6Q5UkNL9uOv_G7jenp7nwobKD3w5Xe4ReeZcG74sX_C4EBb8BDgp1D-8Lyqsv4ZQ/exec">
+        <label for="id" data-lang="label">Enter ID:</label>
+        <input type="number" id="id" name="id" required autofocus>
+        <button type="submit" data-lang="button">Search</button>
+    </form>
+    <div id="result">
+        <p ><strong data-lang="resultName">Name:</strong> <span id="name"></span></p>
+        <p><strong>Секция:</strong> <span id="section"></span></p>
+        <p ><strong>Аудитория:</strong> <span id="place"></span></p>
+        <div id="success-icon" style="display:none;">
+            <img src="assets/success-icon.png" alt="Success" width="128px" height="128px"/>
+        </div>
+    </div>
+</div>
+
+<div class="events-section">
+    <h2 data-lang="eventsHeading">Events</h2>
+    <table id="events-table">
+        <thead>
+        <tr>
+            <th data-lang="eventsTime">Time</th>
+            <th data-lang="eventsDescription">Description</th>
+            <th data-lang="eventsPlace">Аудитория</th>
+        </tr>
+        </thead>
+        <tbody id="events">
+        </tbody>
+    </table>
+</div>
+
+
+<div class="pdf-section">
+
+    <h2 data-lang="pdfDownload">Download PDFs</h2>
+    <ul>
+        <li><a href="assets/Саммит%20бағдарламасы.pdf">Саммит бағдарламасы</a></li>
+        <li><a href="assets/Августовка%2015.08.pdf" download>Саммит презентациясы</a></li>
+        <li><a href="assets/Министердің%20баяндамасы.pdf" download>Министрдің баяндамасы</a></li>
+        <li><a href="assets/Үндеу%20Тамыз-2024.pdf" download>Үндеу каз.</a></li>
+        <li><a href="assets/Обращение%20-ундеу%20рус..pdf" download>Үндеу рус.</a></li>
+        <li><a href="assets/Секциялар.pdf">Секциялар</a></li>
+        <li><a href="assets/Тамыз%20саммитінің%20ұсынымдары.pdf">Саммит ұсынымдары</a></li>
+        <li><a href="assets/Рекомендации%20августовского%20саммита.pdf">Рекомендации саммита</a></li>
+        <li><a href="assets/Ұлттық%20баяндама%20(2023%20жылдың%20қорытындысы).pdf">Ұлттық баяндама</a></li>
+    </ul>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
