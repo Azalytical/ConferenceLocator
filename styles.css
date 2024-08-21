@@ -1,29 +1,29 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f7f8fa;
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    color: #333;
 }
 
 .container {
     background-color: #fff;
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: 20px;
-    transition: transform 0.3s ease-in-out;
+    margin: 20px 0;
+    transition: box-shadow 0.3s ease;
 }
 
 .container:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .language-switcher {
@@ -33,56 +33,52 @@ body {
 }
 
 .language-switcher button {
-    margin-left: 10px;
-    padding: 7px 14px;
+    margin-left: 8px;
+    padding: 8px 16px;
     background-color: #007BFF;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: background-color 0.3s ease;
 }
 
 .language-switcher button:hover {
     background-color: #0056b3;
-    transform: scale(1.1);
 }
 
 h1 {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.8em;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 15px;
 }
 
 label {
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin-bottom: 10px;
+    font-weight: 600;
     color: #555;
 }
 
 input[type="number"] {
     padding: 12px;
     width: 100%;
-    max-width: 300px;
+    max-width: 320px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease;
 }
 
 input[type="number"]:focus {
     border-color: #007BFF;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
 }
 
@@ -110,26 +106,25 @@ button:hover {
 
 .events-section, .pdf-section {
     background-color: #fff;
-    padding: 30px;
+    padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
     text-align: center;
-    margin: 20px auto;
-    transition: transform 0.3s ease-in-out;
+    margin: 20px 0;
+    transition: box-shadow 0.3s ease;
 }
 
 .events-section:hover, .pdf-section:hover {
-    transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 .events-section h2, .pdf-section h2 {
     color: #333;
     margin-bottom: 20px;
     font-size: 1.6em;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
 }
 
 table {
@@ -139,7 +134,7 @@ table {
 }
 
 table th, table td {
-    padding: 15px;
+    padding: 12px;
     border: 1px solid #ccc;
     text-align: left;
 }
@@ -153,12 +148,7 @@ table th {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-top: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-}
-
-.pdf-viewer:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 #success-icon {
@@ -169,7 +159,7 @@ table th {
 #success-icon img {
     max-width: 100%;
     height: auto;
-    width: 50px;
+    width: 60px;
     transition: transform 0.3s ease-in-out;
 }
 
