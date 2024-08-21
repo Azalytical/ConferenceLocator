@@ -39,21 +39,38 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
 });
 
 
-const events = [
-    {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},
-    {time: "09:00-09:45", description: "«Мастер - дәріс», Хартман Дуглас, Мичиган мемлекеттік университетінің профессоры", place: "«MAIN HALL»"},
-    {time: "10:00-12:30", description: "Секциялық отырыстар",place:"12 секция"},
-    {time: "12:30-14:00", description: "Үзіліс",place:""},
-    {time: "14:00", description: "Цифрлық көрме жұмысымен танысу",place:"Жоғарғы атриум"},
-    {time: "14:30-14:50", description: "«Қазақстан мұғалімі» ұлттық премиясының Үздік-50 финалистінің тұсаукесері",place:"«MAIN HALL»"},
-    {time: "15:00-16:00", description: "Пленарлық сессия, Бірінші сессия",place:"«MAIN HALL»"},
-    {time: "16:00-17:00", description: "Пленарлық сессия, Екінші сессия",place:"«MAIN HALL»"},
-    {time: "17:00", description: "Тамыз саммитінің жабылуы",place:"«MAIN HALL»"}
-];
+const events = {
+    ru: [
+        {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
+        {time: "09:00-09:45", description: "«Мастер-класс», Хартман Дуглас, профессор Университета штата Мичиган", place: "«MAIN HALL»"},
+        {time: "10:00-12:30", description: "Секционные заседания", place: "12 секция"},
+        {time: "12:30-14:00", description: "Перерыв", place: ""},
+        {time: "14:00", description: "Знакомство с цифровой выставкой", place: "Верхний атриум"},
+        {time: "14:30-14:50", description: "Презентация ТОП-50 финалистов национальной премии «Учитель Казахстана»", place: "«MAIN HALL»"},
+        {time: "15:00-16:00", description: "Пленарная сессия, Первая сессия", place: "«MAIN HALL»"},
+        {time: "16:00-17:00", description: "Пленарная сессия, Вторая сессия", place: "«MAIN HALL»"},
+        {time: "17:00", description: "Закрытие августовского саммита", place: "«MAIN HALL»"}
+    ],
+    kz: [
+        {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},
+        {time: "09:00-09:45", description: "«Мастер - дәріс», Хартман Дуглас, Мичиган мемлекеттік университетінің профессоры", place: "«MAIN HALL»"},
+        {time: "10:00-12:30", description: "Секциялық отырыстар", place: "12 секция"},
+        {time: "12:30-14:00", description: "Үзіліс", place: ""},
+        {time: "14:00", description: "Цифрлық көрме жұмысымен танысу", place: "Жоғарғы атриум"},
+        {time: "14:30-14:50", description: "«Қазақстан мұғалімі» ұлттық премиясының Үздік-50 финалистінің тұсаукесері", place: "«MAIN HALL»"},
+        {time: "15:00-16:00", description: "Пленарлық сессия, Бірінші сессия", place: "«MAIN HALL»"},
+        {time: "16:00-17:00", description: "Пленарлық сессия, Екінші сессия", place: "«MAIN HALL»"},
+        {time: "17:00", description: "Тамыз саммитінің жабылуы", place: "«MAIN HALL»"}
+    ]
+};
 
-function displayEvents() {
+
+
+function displayEvents(lang = 'ru') {
     const eventsTable = document.getElementById('events');
-    events.forEach(event => {
+    eventsTable.innerHTML = ''; // Очистка таблицы перед добавлением новых событий
+
+    events[lang].forEach(event => {
         const eventRow = document.createElement('tr');
         eventRow.innerHTML = `<td>${event.time}</td><td>${event.description}</td><td>${event.place}</td>`;
         eventsTable.appendChild(eventRow);
@@ -64,20 +81,20 @@ let currentLang = 'ru'; // по умолчанию русский язык
 
 function toggleLanguage() {
     if (currentLang === 'ru') {
-        switchLanguage('kz');
         currentLang = 'kz';
         document.getElementById('switch-lang').innerText = 'Русский';
     } else {
-        switchLanguage('ru');
         currentLang = 'ru';
-        document.getElementById('switch-lang').innerText = 'Казахский';
+        document.getElementById('switch-lang').innerText = 'Қазақша';
     }
+    switchLanguage(currentLang);
+    displayEvents(currentLang); // Обновляем отображение событий на выбранном языке
 }
 
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: 'Скибиди дәретханасының өзі бойынша Конференция',
+            heading: 'Саммит бағдарламасы',
             label: 'Тіркелу үшін ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
@@ -90,7 +107,7 @@ function switchLanguage(lang) {
             resultName: 'Аты-жөні:'
         },
         ru: {
-            heading: '«Конференция по самому скибиди туалету',
+            heading: 'Программа Саммита',
             label: 'Введите ИИН для регистрации:',
             button: 'Поиск',
             section: 'Секция:',
@@ -103,7 +120,7 @@ function switchLanguage(lang) {
             resultName: 'Имя:'
         }
     };
-    
+
     document.querySelectorAll('[data-lang]').forEach(element => {
         const key = element.getAttribute('data-lang');
         if (translations[lang][key]) {
