@@ -60,22 +60,50 @@ function displayEvents() {
     });
 }
 
+let currentLang = 'ru'; // по умолчанию русский язык
+
+function toggleLanguage() {
+    if (currentLang === 'ru') {
+        switchLanguage('kz');
+        currentLang = 'kz';
+        document.getElementById('switch-lang').innerText = 'Switch to Russian';
+    } else {
+        switchLanguage('ru');
+        currentLang = 'ru';
+        document.getElementById('switch-lang').innerText = 'Switch to Kazakh';
+    }
+}
+
 function switchLanguage(lang) {
     const translations = {
         kz: {
             heading: '«DIGITAL KAZAKHSTAN: ЗАМАНАУИ БІЛІМ БЕРУ» педагогтердің республикалық тамыз саммиті',
-            label: 'тіркелу үшін ЖСН жазыңыз',
+            label: 'Тіркелу үшін ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
             place: 'Орны:',
             eventsHeading: 'Саммит бағдарламасы',
             eventsTime: 'Уақыты',
             eventsDescription: 'Іс-шара',
+            eventsPlace: 'Аудитория',
             pdfDownload: 'Документтер',
-            pdfView: 'Саммит материалдары',
             resultName: 'Аты-жөні:'
         },
+        ru: {
+            heading: '«DIGITAL KAZAKHSTAN: СОВРЕМЕННОЕ ОБРАЗОВАНИЕ» Республиканский саммит педагогов',
+            label: 'Введите ИИН для регистрации:',
+            button: 'Поиск',
+            section: 'Секция:',
+            place: 'Аудитория:',
+            eventsHeading: 'Программа Саммита',
+            eventsTime: 'Время',
+            eventsDescription: 'Описание',
+            eventsPlace: 'Аудитория',
+            pdfDownload: 'Документы',
+            resultName: 'Имя:'
+        }
     };
+    
     document.querySelectorAll('[data-lang]').forEach(element => {
         const key = element.getAttribute('data-lang');
         if (translations[lang][key]) {
@@ -84,5 +112,6 @@ function switchLanguage(lang) {
     });
 }
 
+// Начальная установка языка
+switchLanguage(currentLang);
 displayEvents();
-switchLanguage('kz');
