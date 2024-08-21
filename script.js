@@ -96,7 +96,7 @@ function toggleLanguage() {
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: 'ТАРАЗ САММИТ МУРАТ АБДУЛАИВИЧ',
+            heading: '"Заманауи білім беру" Жамбыл педагогтар саммиті',
             label: 'ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
@@ -109,7 +109,7 @@ function switchLanguage(lang) {
             resultName: 'Аты-жөні:'
         },
         ru: {
-            heading: 'ТАРАЗ САММИТ МУРАТ АБДУЛАИВИЧ',
+            heading: 'Жамбылский саммит педагогов "современное образование" ',
             label: 'Введите ИИН:',
             button: 'Поиск',
             section: 'Секция:',
