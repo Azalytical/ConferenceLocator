@@ -70,6 +70,8 @@ function displayEvents(lang = 'ru') {
     const eventsTable = document.getElementById('events');
     eventsTable.innerHTML = ''; // Очистка таблицы перед добавлением новых событий
 
+    console.log(lang);
+    
     events[lang].forEach(event => {
         const eventRow = document.createElement('tr');
         eventRow.innerHTML = `<td>${event.time}</td><td>${event.description}</td><td>${event.place}</td>`;
