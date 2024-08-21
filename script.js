@@ -42,25 +42,25 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
 const events = {
     ru: [
         {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
-        {time: "09:00-09:45", description: "«Мастер-класс», Хартман Дуглас, профессор Университета штата Мичиган", place: "«MAIN HALL»"},
-        {time: "10:00-12:30", description: "Секционные заседания", place: "12 секция"},
-        {time: "12:30-14:00", description: "Перерыв", place: ""},
-        {time: "14:00", description: "Знакомство с цифровой выставкой", place: "Верхний атриум"},
-        {time: "14:30-14:50", description: "Презентация ТОП-50 финалистов национальной премии «Учитель Казахстана»", place: "«MAIN HALL»"},
-        {time: "15:00-16:00", description: "Пленарная сессия, Первая сессия", place: "«MAIN HALL»"},
-        {time: "16:00-17:00", description: "Пленарная сессия, Вторая сессия", place: "«MAIN HALL»"},
-        {time: "17:00", description: "Закрытие августовского саммита", place: "«MAIN HALL»"}
+        {time: "09:00-09:45", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "10:00-12:30", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "12:30-14:00", description: "ТЕСТ", place: ""},
+        {time: "14:00", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "14:30-14:50", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "15:00-16:00", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "16:00-17:00", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "17:00", description: "ТЕСТ", place: "ТЕСТ"}
     ],
     kz: [
-        {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},
-        {time: "09:00-09:45", description: "«Мастер - дәріс», Хартман Дуглас, Мичиган мемлекеттік университетінің профессоры", place: "«MAIN HALL»"},
-        {time: "10:00-12:30", description: "Секциялық отырыстар", place: "12 секция"},
-        {time: "12:30-14:00", description: "Үзіліс", place: ""},
-        {time: "14:00", description: "Цифрлық көрме жұмысымен танысу", place: "Жоғарғы атриум"},
-        {time: "14:30-14:50", description: "«Қазақстан мұғалімі» ұлттық премиясының Үздік-50 финалистінің тұсаукесері", place: "«MAIN HALL»"},
-        {time: "15:00-16:00", description: "Пленарлық сессия, Бірінші сессия", place: "«MAIN HALL»"},
-        {time: "16:00-17:00", description: "Пленарлық сессия, Екінші сессия", place: "«MAIN HALL»"},
-        {time: "17:00", description: "Тамыз саммитінің жабылуы", place: "«MAIN HALL»"}
+        {time: "08:00-09:00", description: "Регистрация", place: "Фойе"},
+        {time: "09:00-09:45", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "10:00-12:30", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "12:30-14:00", description: "ТЕСТ", place: ""},
+        {time: "14:00", description: "ТЕСТ", place: "ТЕСТ 2"},
+        {time: "14:30-14:50", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "15:00-16:00", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "16:00-17:00", description: "ТЕСТ", place: "ТЕСТ"},
+        {time: "17:00", description: "ТЕСТ", place: "ТЕСТ"}
     ]
 };
 
@@ -94,12 +94,12 @@ function toggleLanguage() {
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: 'Саммит бағдарламасы',
-            label: 'Тіркелу үшін ЖСН жазыңыз:',
+            heading: 'СКИБИДИ САММИТ',
+            label: 'ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
             place: 'Орны:',
-            eventsHeading: 'Саммит бағдарламасы',
+            eventsHeading: 'СКИБИДИ бағдарламасы',
             eventsTime: 'Уақыты',
             eventsDescription: 'Іс-шара',
             eventsPlace: 'Аудитория',
@@ -107,12 +107,12 @@ function switchLanguage(lang) {
             resultName: 'Аты-жөні:'
         },
         ru: {
-            heading: 'Программа Саммита',
-            label: 'Введите ИИН для регистрации:',
+            heading: 'СКИБИДИ САММИТ',
+            label: 'Введите ИИН:',
             button: 'Поиск',
             section: 'Секция:',
             place: 'Аудитория:',
-            eventsHeading: 'Программа Саммита',
+            eventsHeading: 'Программа СКИБИДИ',
             eventsTime: 'Время',
             eventsDescription: 'Описание',
             eventsPlace: 'Аудитория',
