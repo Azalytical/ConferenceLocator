@@ -1,11 +1,8 @@
 document.getElementById('lookup-form').addEventListener('submit', function (event) {
-    event.preventDefault();  // предотвращаем отправку формы
+    event.preventDefault();
+    const id = parseInt(document.getElementById('id').value.trim(), 10);
 
-    const iin = document.getElementById('iin').value.trim();  // получаем введенный ИИН
 
-    console.log(iin);
-    
-    // Загружаем файл data.csv и ищем человека по ИИН
     fetch('assets/data.csv')
         .then(response => response.text())
         .then(text => {
@@ -21,26 +18,26 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
                 return item;
             });
 
-            // Ищем человека по ИИН
-            const item = data.find(entry => entry.IIN === iin);  // изменено на поиск по IIN
+            const item = data.find(entry => parseInt(entry.ID, 10) === id);
             if (item) {
                 document.getElementById('name').innerText = `${item.Name}`;
                 document.getElementById('section').innerText = `${item.Section}`;
                 document.getElementById('place').innerText = `${item.Place}`;
                 document.getElementById('success-icon').style.display = 'block';
             } else {
-                document.getElementById('name').innerText = 'ИИН не найден';
+                document.getElementById('name').innerText = 'ID not found';
                 document.getElementById('section').innerText = '';
                 document.getElementById('place').innerText = '';
             }
         })
         .catch(error => {
-            console.error('Ошибка:', error);
-            document.getElementById('name').innerText = 'Ошибка загрузки данных';
+            console.error('Error:', error);
+            document.getElementById('name').innerText = 'Error loading data';
             document.getElementById('section').innerText = '';
             document.getElementById('place').innerText = '';
         });
 });
+
 
 const events = [
     {time: "08:00-09:00", description: "Тіркелу", place: "Фойе"},

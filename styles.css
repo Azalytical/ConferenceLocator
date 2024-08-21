@@ -1,22 +1,29 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0);
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    color: #333;
 }
 
 .container {
     background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin: 20px 0;
+    margin: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: translateY(-10px);
 }
 
 .language-switcher {
@@ -27,72 +34,72 @@ body {
 
 .language-switcher button {
     margin-left: 10px;
-    padding: 5px 10px;
+    padding: 7px 14px;
     background-color: #007BFF;
     border: none;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .language-switcher button:hover {
     background-color: #0056b3;
+    transform: scale(1.1);
 }
 
 h1 {
     color: #333;
     margin-bottom: 20px;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
 label {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: bold;
     color: #555;
 }
 
 input[type="number"] {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     max-width: 300px;
     margin-bottom: 20px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
-    -webkit-appearance: none;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="number"]:focus {
     border-color: #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
     outline: none;
-    -webkit-appearance: none;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background-color: #007BFF;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 #section, #place {
@@ -101,34 +108,40 @@ button:hover {
     color: #333;
 }
 
-#id {
-    -webkit-appearance: none;
-}
-
-.events-section {
+.events-section, .pdf-section {
     background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
     text-align: center;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    transition: transform 0.3s ease-in-out;
 }
 
-.events-section h2 {
+.events-section:hover, .pdf-section:hover {
+    transform: translateY(-10px);
+}
+
+.events-section h2, .pdf-section h2 {
     color: #333;
     margin-bottom: 20px;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 20px;
 }
 
 table th, table td {
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ccc;
+    text-align: left;
 }
 
 table th {
@@ -136,97 +149,18 @@ table th {
     color: #fff;
 }
 
-@media (max-width: 600px) {
-    .container, .events-section {
-        padding: 20px;
-        width: 90%;
-    }
-
-    input[type="number"] {
-        width: 100%;
-    }
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
-    text-align: center;
-    margin: 20px 0;
-}
-
-.pdf-section {
-    background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    margin: 20px 0;
-    text-align: center;
-}
-
-.pdf-section h2 {
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.pdf-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.pdf-section li {
-    margin-bottom: 10px;
-}
-
-.pdf-section a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.pdf-section a:hover {
-    text-decoration: underline;
-}
-
-
 .pdf-viewer {
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
 }
 
-
-@media (max-width: 600px) {
-    .container, .events-section, .pdf-section {
-        padding: 20px;
-        width: 90%;
-    }
-
-    input[type="number"] {
-        width: 100%;
-    }
+.pdf-viewer:hover {
+    transform: translateY(-5px);
 }
-#result p {
-    margin: 10px 0;
-    font-size: 1.2em;
-    color: #333;
-}
+
 #success-icon {
     text-align: center;
     margin-top: 20px;
@@ -236,18 +170,20 @@ body {
     max-width: 100%;
     height: auto;
     width: 50px;
+    transition: transform 0.3s ease-in-out;
 }
 
+#success-icon img:hover {
+    transform: rotate(360deg);
+}
 
-@media (min-width: 600px) {
-    #success-icon img {
-        width: 100px;
+@media (max-width: 600px) {
+    .container, .events-section, .pdf-section {
+        padding: 20px;
+        width: 90%;
     }
-}
 
-
-@media (min-width: 1200px) {
-    #success-icon img {
-        width: 128px;
+    input[type="number"] {
+        width: 100%;
     }
 }
