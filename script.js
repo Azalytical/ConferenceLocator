@@ -96,7 +96,7 @@ function toggleLanguage() {
 function switchLanguage(lang) {
     const translations = {
         kz: {
-            heading: '"Заманауи білім беру" Жамбыл педагогтар саммиті',
+            heading: '"БІЛІМ БЕРУДЕГІ ЦИФРЛЫҚ ИННОВАЦИЯЛАР"\nпедагогтердің қалалық тамыз кеңесі',
             label: 'ЖСН жазыңыз:',
             button: 'Іздеу',
             section: 'Бөлім:',
@@ -106,10 +106,15 @@ function switchLanguage(lang) {
             eventsDescription: 'Іс-шара',
             eventsPlace: 'Аудитория',
             pdfDownload: 'Документтер',
-            resultName: 'Аты-жөні:'
+            resultName: 'Аты-жөні:',
+
+            docName1: "Саммит бағдарламасы",
+            docName2: "Үндеу",
+            docName3: "Секциялар",
+            docName4: "Материалдар",
         },
         ru: {
-            heading: 'Жамбылский саммит педагогов "современное образование" ',
+            heading: '"ЦИФРОВЫЕ ИННОВАЦИИ В ОБРАЗОВАНИИ"\nгородское августовское совещание педагогов',
             label: 'Введите ИИН:',
             button: 'Поиск',
             section: 'Секция:',
@@ -119,7 +124,12 @@ function switchLanguage(lang) {
             eventsDescription: 'Описание',
             eventsPlace: 'Аудитория',
             pdfDownload: 'Документы',
-            resultName: 'Имя:'
+            resultName: 'Имя:',
+
+            docName1: "Программа саммита",
+            docName2: "Обращение",
+            docName3: "Секции",
+            docName4: "Материалы",
         }
     };
 
