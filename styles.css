@@ -268,13 +268,14 @@ table th:last-child {
     }
 
     /* Оставляем стандартное отображение таблицы */
-    table {
-        width: 100%;
+    table, thead, tbody, th, td, tr {
+        display: table; /* Убираем display: block */
+        white-space: nowrap; /* Запрещаем перенос текста */
     }
-
-    table th, table td {
-        padding: 8px 10px;
-        font-size: 0.9rem;
+    
+    table {
+        overflow-x: auto; /* Добавляем горизонтальную прокрутку */
+        display: block; /* Добавляем блочный режим для таблицы */
     }
 
     table tr:hover {
