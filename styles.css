@@ -1,96 +1,171 @@
 /* Сброс общего стиля */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #e0f7fa;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+    position: relative;
+}
+
+/* Переключатель языков закреплен в правом верхнем углу с плавной анимацией */
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    z-index: 1000;
+    opacity: 0; /* Начальная прозрачность */
+    transform: translateY(-20px); /* Начальное смещение вверх */
+    animation: fadeInMoveDown 1s ease-in-out forwards; /* Плавная анимация */
+}
+
+.language-switcher button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    background-color: #00838f;
+    border: none;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.language-switcher button:hover {
+    background-color: #004d40;
+    transform: translateY(-2px);
+}
+
+/* Анимация для плавного появления */
+@keyframes fadeInMoveDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px); /* Начальное положение выше экрана */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Конечное положение */
+    }
 }
 
 /* Основной контейнер */
 .container {
     background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    text-align: left; /* Изменено на выравнивание слева */
+    text-align: center;
     margin: 20px 0;
+    transition: transform 0.3s ease;
 }
 
-/* Переключатель языков */
-.language-switcher {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-}
-
-.language-switcher button {
-    margin-left: 10px;
-    padding: 5px 10px;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.language-switcher button:hover {
-    background-color: #0056b3;
+.container:hover {
+    transform: scale(1.02);
 }
 
 /* Заголовки и текст */
 h1, h2 {
-    color: #333;
+    color: #00796b;
     margin-bottom: 20px;
-    text-align: left; /* Заголовки выравниваем слева */
+    text-align: center;
+    font-size: 2em;
+    position: relative;
 }
 
+h1:after, h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background-color: #00796b;
+    margin: 10px auto 0;
+}
+
+/* Гиперссылки */
+a {
+    font-size: 1.2rem;
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #004d40;
+    transform: translateY(-3px);
+    text-decoration: underline;
+}
+
+a:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #007BFF;
+    transition: width 0.3s;
+    left: 0;
+    bottom: -5px;
+}
+
+a:hover:after {
+    width: 100%;
+}
+
+/* Формы */
 form {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Выровнено по левому краю */
+    align-items: center;
 }
 
 label {
     margin-bottom: 10px;
     font-weight: bold;
     color: #555;
-    text-align: left; /* Лейблы выравниваем слева */
+    text-align: center;
 }
 
 input[type="number"] {
-    padding: 10px;
+    padding: 12px;
     width: 100%;
     max-width: 300px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #00838f;
+    border-radius: 10px;
     box-sizing: border-box;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 input[type="number"]:focus {
-    border-color: #007BFF;
+    border-color: #004d40;
+    box-shadow: 0 0 10px rgba(0, 131, 143, 0.5);
     outline: none;
 }
 
+/* Кнопки */
 button {
-    padding: 10px 20px;
-    background-color: #007BFF;
+    padding: 12px 25px;
+    background-color: #00796b;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     color: #fff;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #004d40;
+    transform: translateY(-2px);
 }
 
 /* Секция результатов */
@@ -98,37 +173,93 @@ button:hover {
     margin-top: 20px;
     font-size: 1.2em;
     color: #333;
-    text-align: left; /* Выровнено по левому краю */
+    text-align: center;
 }
 
 /* Секция событий */
 .events-section {
     background-color: #fff;
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 30px 50px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 600px;
-    text-align: left; /* События выравниваем слева */
+    text-align: center;
     margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.events-section:hover {
+    transform: scale(1.02);
 }
 
 /* Таблица событий */
 table {
-    width: 100%;
+    width: 100%; /* Ограничиваем ширину таблицы в пределах контейнера */
     border-collapse: collapse;
-    text-align: left; /* Таблицу выравниваем слева */
+    margin: 20px 0;
+    font-size: 1rem;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
 table th, table td {
-    padding: 10px;
-    border: 1px solid #ccc;
+    padding: 10px 15px; /* Уменьшение отступов для компактности */
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: normal; /* Разрешаем перенос текста */
+    word-wrap: break-word; /* Переносим длинные слова */
+    word-break: break-word; /* Переносим текст при необходимости */
 }
 
 table th {
-    background-color: #007BFF;
+    background-color: #00838f;
     color: #fff;
-    text-align: left; /* Заголовки таблицы выравниваем слева */
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+table td:first-child {
+    font-weight: bold;
+    color: #d32f2f;
+    font-size: 1.1rem;
+    width: 130px;
+    text-align: center;
+    background-color: rgba(0, 131, 143, 0.1);
+    border-right: 2px solid #ccc;
+}
+
+table tr:hover {
+    background-color: rgba(0, 131, 143, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+table td {
+    color: #333;
+    font-size: 0.9rem;
+}
+
+table tr:hover td:first-child {
+    color: #d32f2f;
+}
+
+table td:first-child:hover {
+    background-color: rgba(211, 47, 47, 0.1);
+}
+
+/* Градиент для заголовков */
+table th:first-child {
+    background: linear-gradient(to right, #00838f, #004d40);
+}
+
+table th:last-child {
+    background: linear-gradient(to right, #004d40, #00838f);
 }
 
 /* Адаптивность для мобильных устройств */
@@ -140,5 +271,41 @@ table th {
 
     input[type="number"] {
         width: 100%;
+    }
+
+    .language-switcher {
+        top: 10px;
+        right: 10px;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    table tr {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #ddd;
+        padding-bottom: 10px;
+    }
+    
+    table th {
+        background-color: transparent;
+        color: #333;
+        text-align: right;
+    }
+    
+    table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+    
+    table td:before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        font-weight: bold;
+        color: #00796b;
+        text-transform: uppercase;
     }
 }
