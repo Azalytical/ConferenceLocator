@@ -195,7 +195,7 @@ button:hover {
 
 /* Общие стили таблицы */
 table {
-    width: 100%; /* Гибкая ширина таблицы */
+    width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 1rem;
@@ -210,7 +210,7 @@ table th, table td {
     padding: 10px 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
-    white-space: normal; /* Разрешаем перенос текста */
+    white-space: normal;
     word-wrap: break-word;
 }
 
@@ -243,7 +243,6 @@ table tr:hover {
     transition: background-color 0.3s ease;
 }
 
-
 table tr:hover td:first-child {
     color: #d32f2f;
 }
@@ -268,12 +267,18 @@ table th:last-child {
         width: 90%;
     }
 
+    /* Оставляем стандартное отображение таблицы */
     table {
-        table-layout: auto; /* Автоматическая ширина колонок */
+        width: 100%;
     }
 
     table th, table td {
-        font-size: 0.8rem; /* Уменьшение шрифта для компактности */
-        padding: 8px 10px; /* Меньшие отступы */
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    table tr:hover {
+        background-color: rgba(0, 131, 143, 0.1);
+        cursor: pointer;
     }
 }
