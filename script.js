@@ -21,20 +21,20 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
             const item = data.find(entry => parseInt(entry.ID, 10) === id);
             if (item) {
                 document.getElementById('name').innerText = `${item.Name}`;
-                document.getElementById('section').innerText = `${item.Section}`;
-                document.getElementById('place').innerText = `${item.Place}`;
+                //document.getElementById('section').innerText = `${item.Section}`;
+                //document.getElementById('place').innerText = `${item.Place}`;
                 document.getElementById('success-icon').style.display = 'block';
             } else {
                 document.getElementById('name').innerText = 'Не найдено';
-                document.getElementById('section').innerText = '';
-                document.getElementById('place').innerText = '';
+                //document.getElementById('section').innerText = '';
+                //document.getElementById('place').innerText = '';
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            document.getElementById('name').innerText = 'Не найдено';
-            document.getElementById('section').innerText = '';
-            document.getElementById('place').innerText = '';
+            document.getElementById('name').innerText = 'Не найдено, Ошибка';
+           // document.getElementById('section').innerText = '';
+           // document.getElementById('place').innerText = '';
         });
 });
 
