@@ -1,13 +1,13 @@
 document.getElementById('lookup-form').addEventListener('submit', function (event) {
     event.preventDefault();
-    const id = parseInt(document.getElementById('id').value.trim(), 10);
-
+    const id = document.getElementById('id').value.trim();
 
     fetch('assets/data.csv')
         .then(response => response.text())
         .then(text => {
-            const rows = text.trim().split('\n');
-            const headers = rows[0].split(',').map(header => header.trim());
+            // Убираем пробелы и пустую запятую в заголовке
+            const rows = text.trim().split('\n').map(row => row.trim());
+            const headers = rows[0].replace(/,\s*$/, '').split(',').map(header => header.trim());
 
             const data = rows.slice(1).map(row => {
                 const values = row.split(',').map(value => value.trim());
@@ -18,25 +18,21 @@ document.getElementById('lookup-form').addEventListener('submit', function (even
                 return item;
             });
 
-            const item = data.find(entry => parseInt(entry.ID, 10) === id);
+            // Ищем по полю "ID", которое должно быть строкой для корректного сравнения
+            const item = data.find(entry => entry.ID === id);
             if (item) {
-                document.getElementById('name').innerText = `${item.Name}`;
-                //document.getElementById('section').innerText = `${item.Section}`;
-                //document.getElementById('place').innerText = `${item.Place}`;
+                document.getElementById('name').innerText = item.Name;
                 document.getElementById('success-icon').style.display = 'block';
             } else {
                 document.getElementById('name').innerText = 'Не найдено';
-                //document.getElementById('section').innerText = '';
-                //document.getElementById('place').innerText = '';
             }
         })
         .catch(error => {
             console.error('Error:', error);
             document.getElementById('name').innerText = 'Не найдено, Ошибка';
-           // document.getElementById('section').innerText = '';
-           // document.getElementById('place').innerText = '';
         });
 });
+
 
 
 const events = {
