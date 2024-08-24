@@ -269,32 +269,30 @@ table th:last-child {
         width: 90%;
     }
 
-    table, thead, tbody, th, td, tr {
-        display: block;
-        width: 100%;
+    table {
+        width: 100%; /* Гибкая ширина */
+        table-layout: auto; /* Оставляем таблицу в горизонтальной ориентации */
     }
 
-    table tr {
-        margin-bottom: 15px;
-        border-bottom: 2px solid #ddd;
-        padding-bottom: 10px;
+    table, thead, tbody, th, td, tr {
+        display: table; /* Оставляем традиционное отображение таблицы */
+    }
+
+    table th, table td {
+        padding: 8px 10px; /* Уменьшение отступов для компактности */
+        font-size: 0.9rem; /* Небольшое уменьшение шрифта */
+        text-align: left;
+        white-space: normal; /* Разрешаем перенос текста */
+        word-wrap: break-word;
     }
 
     table th {
-        background-color: #00838f;
+        background-color: #00838f; /* Сохранение фона заголовков */
         color: #fff;
-        text-align: left;
-        padding: 10px;
     }
 
     table td {
-        text-align: left;
-        padding: 10px;
         color: #333;
-        position: relative;
-        white-space: normal; /* Разрешаем перенос текста */
-        word-wrap: break-word;
-        word-break: break-word;
     }
 
     table td:before {
