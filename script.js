@@ -85,7 +85,7 @@ function displayEvents(lang = 'ru') {
     });
 }
 
-let currentLang = 'ru'; // по умолчанию русский язык
+let currentLang = 'kz'; // по умолчанию русский язык
 
 function toggleLanguage() {
     if (currentLang === 'ru') {
