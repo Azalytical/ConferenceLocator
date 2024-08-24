@@ -115,7 +115,7 @@ function switchLanguage(lang) {
             docName2: "Үндеу",
             docName3: "Секциялар",
             docName4: "Материалдар",
-            docName5: "Саммит ұсынымдары",
+            docName5: "ұсынымдары",
         },
         ru: {
             heading: '"ЦИФРОВЫЕ ИННОВАЦИИ В ОБРАЗОВАНИИ"\nгородское августовское совещание педагогов',
@@ -130,11 +130,11 @@ function switchLanguage(lang) {
             pdfDownload: 'Документы',
             resultName: 'Имя:',
 
-            docName1: "Программа саммита",
+            docName1: "Программа",
             docName2: "Обращение",
             docName3: "Секции",
             docName4: "Материалы",
-            docName5: "Рекомендации саммита",
+            docName5: "Рекомендации",
         }
     };
 
