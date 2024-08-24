@@ -193,9 +193,9 @@ button:hover {
     transform: scale(1.02);
 }
 
-/* Таблица событий */
+/* Общие стили таблицы */
 table {
-    width: 100%; /* Ограничиваем ширину таблицы в пределах контейнера */
+    width: 100%; /* Гибкая ширина таблицы */
     border-collapse: collapse;
     margin: 20px 0;
     font-size: 1rem;
@@ -207,12 +207,11 @@ table {
 }
 
 table th, table td {
-    padding: 10px 15px; /* Уменьшение отступов для компактности */
+    padding: 10px 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
     white-space: normal; /* Разрешаем перенос текста */
-    word-wrap: break-word; /* Переносим длинные слова */
-    word-break: break-word; /* Переносим текст при необходимости */
+    word-wrap: break-word;
 }
 
 table th {
@@ -221,7 +220,11 @@ table th {
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1rem;
-    letter-spacing: 0.1rem;
+}
+
+table td {
+    color: #333;
+    font-size: 0.9rem;
 }
 
 table td:first-child {
@@ -240,10 +243,6 @@ table tr:hover {
     transition: background-color 0.3s ease;
 }
 
-table td {
-    color: #333;
-    font-size: 0.9rem;
-}
 
 table tr:hover td:first-child {
     color: #d32f2f;
@@ -270,42 +269,11 @@ table th:last-child {
     }
 
     table {
-        width: 100%; /* Гибкая ширина */
-        table-layout: auto; /* Оставляем таблицу в горизонтальной ориентации */
-    }
-
-    table, thead, tbody, th, td, tr {
-        display: table; /* Оставляем традиционное отображение таблицы */
+        table-layout: auto; /* Автоматическая ширина колонок */
     }
 
     table th, table td {
-        padding: 8px 10px; /* Уменьшение отступов для компактности */
-        font-size: 0.9rem; /* Небольшое уменьшение шрифта */
-        text-align: left;
-        white-space: normal; /* Разрешаем перенос текста */
-        word-wrap: break-word;
-    }
-
-    table th {
-        background-color: #00838f; /* Сохранение фона заголовков */
-        color: #fff;
-    }
-
-    table td {
-        color: #333;
-    }
-
-    table td:before {
-        content: attr(data-label); /* Используем атрибут для заголовка */
-        position: absolute;
-        left: 10px;
-        font-weight: bold;
-        color: #00796b;
-        text-transform: uppercase;
-    }
-
-    table tr:hover {
-        background-color: rgba(0, 131, 143, 0.1);
-        cursor: pointer;
+        font-size: 0.8rem; /* Уменьшение шрифта для компактности */
+        padding: 8px 10px; /* Меньшие отступы */
     }
 }
